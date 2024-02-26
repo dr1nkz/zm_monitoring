@@ -6,4 +6,4 @@ docker exec -it zoneminder pip install --upgrade pip
 docker compose restart
 
 docker exec -it zoneminder pip cache purge
-docker exec -it zoneminder pip install opencv-python onnxruntime-gpu
+docker exec -it zoneminder pip install opencv-python onnxruntime-gpu==1.15.1
