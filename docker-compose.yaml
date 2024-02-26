@@ -1,0 +1,51 @@
+version: '3.1'
+services:
+    zoneminder:
+        container_name: zoneminder
+        image: dlandon/zoneminder.machine.learning:latest
+        restart: unless-stopped
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - driver: nvidia
+                          count: 1
+                          capabilities: [ gpu ]
+        ports:
+            - 80:80/tcp
+            - 443:443/tcp
+            - 9000:9000/tcp
+        # network_mode: znets
+        network_mode: "bridge"
+        privileged: false
+        shm_size: "8gb"
+        environment:
+            - TZ=Europe/Moscow
+            - PUID=99
+            - PGID=100
+            - MULTI_PORT_START=0
+            - MULTI_PORT_END=0
+        volumes:
+            - config:/config:rw
+            - data:/var/cache/zoneminder:rw
+            - detector:/var/lib/zmeventnotification/bin/my_detection:rw
+
+volumes:
+    config:
+        driver: local # Define the driver and options under the volume name
+        driver_opts:
+            type: none
+            device: ./config/_data
+            o: bind
+    data:
+        driver: local # Define the driver and options under the volume name
+        driver_opts:
+            type: none
+            device: ./data/_data
+            o: bind
+    detector:
+        driver: local # Define the driver and options under the volume name
+        driver_opts:
+            type: none
+            device: ./detector/_data
+            o: bind
