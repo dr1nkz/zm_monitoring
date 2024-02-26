@@ -1,1 +1,0 @@
-/usr/share/zoneminder/www/skins/classic/js/chosen/chosen.jquery.min.js

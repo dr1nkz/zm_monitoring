@@ -1,1 +1,0 @@
-/usr/share/zoneminder/www/js/MonitorStream.js
