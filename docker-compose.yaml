@@ -2,7 +2,8 @@ version: '3.1'
 services:
     zoneminder:
         container_name: zoneminder
-        image: dlandon/zoneminder.machine.learning:latest
+        # image: dlandon/zoneminder.machine.learning:latest
+        build: .
         restart: unless-stopped
         deploy:
             resources:
@@ -29,8 +30,10 @@ services:
             - config:/config:rw
             - data:/var/cache/zoneminder:rw
             - detector:/var/lib/zmeventnotification/bin/my_detection:rw
-
-volumes:
+            # - ./config/_data:/config:rw
+            # - ./data/_data:/var/cache/zoneminder:rw
+            # - ./detector:/var/lib/zmeventnotification/bin/my_detection:rw
+    volumes:
     config:
         driver: local # Define the driver and options under the volume name
         driver_opts:

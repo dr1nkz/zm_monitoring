@@ -1,0 +1,1 @@
+/usr/share/zoneminder/www/skins/classic/js/bootstrap-table-toolbar.min.js
