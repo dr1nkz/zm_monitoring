@@ -33,7 +33,7 @@ services:
             # - ./config/_data:/config:rw
             # - ./data/_data:/var/cache/zoneminder:rw
             # - ./detector:/var/lib/zmeventnotification/bin/my_detection:rw
-    volumes:
+volumes:
     config:
         driver: local # Define the driver and options under the volume name
         driver_opts:
