@@ -14,7 +14,6 @@ Ctrl + C - закрыть
 Хост: detector/_data
 Контейнер: /var/lib/zmeventnotification/bin/my_detection
 
-
 ## Настройка zoneminder
 
 ### Сервис доступен по адресу
