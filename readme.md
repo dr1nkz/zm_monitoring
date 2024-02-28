@@ -18,8 +18,8 @@ Ctrl + C - закрыть
 ## Настройка zoneminder
 
 ### Сервис доступен по адресу
-http://0.0.0.0/zm/
-http://0.0.0.0:80/zm/
+http://localhost/zm/
+http://localhost:80/zm/
 
 ### Изменение rtsp адреса камеры
 Console -> Monitor -> Monitor (по центру) -> Source -> Source Path	
