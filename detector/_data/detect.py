@@ -59,7 +59,7 @@ def gen(monitor_id, duration=30):  # Длительность нахождени
     address, zones = parse_monitor_parameters(monitor_id)
     print(address)
 
-    model_path = r'/var/lib/zmeventnotification/bin/my_detection/yolov8n.onnx'
+    model_path = r'/var/lib/zmeventnotification/bin/my_detection/hf.onnx'
     yolov8_detector = YOLOv8(path=model_path,
                              conf_thres=0.3,
                              iou_thres=0.5)
